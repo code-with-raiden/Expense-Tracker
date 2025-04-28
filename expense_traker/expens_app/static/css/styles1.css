@@ -1,0 +1,408 @@
+/* General Page Styles */
+/* register_login.html */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(120deg, white 20%, skyblue 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-attachment: fixed;
+}
+
+/* General container styling for both forms */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+}
+
+/* Toggle Button Styling */
+.toggle-btn {
+    background-color: #48bb78;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 20px 10px;
+}
+
+.toggle-btn:hover {
+    background-color: #3e9e60;
+}
+
+/* Unique background for the Registration form */
+.register-background {
+    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+}
+
+/* Unique background for the Login form */
+.login-background {
+    background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
+}
+
+/* Common form styling */
+.form-container {
+    width: 100%;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    color: #333;
+}
+
+/* Form input field styles */
+form input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px 0;
+    width: 100%;
+    font-size: 1em;
+}
+
+/* Submit button styles */
+button[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+    background: linear-gradient(135deg, #ff9966, #ff5e62);
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 8px 16px rgba(255, 94, 98, 0.3);
+    transition: all 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background: linear-gradient(135deg, #ff5e62, #ff9966);
+    box-shadow: 0 12px 24px rgba(255, 94, 98, 0.5);
+}
+
+/* Form header styles */
+h1, h2 {
+    text-align: center;
+    color: #333;
+}
+
+/* Error Message Styles */
+.alert {
+    color: #ff5e62;
+    font-weight: bold;
+    background-color: #ffe6e6;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(255, 94, 98, 0.2);
+}
+
+/* Hidden class for hiding forms */
+.hidden {
+    display: none;
+}
+
+/* Bar chart container in the center */
+.chart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    margin: 20px 0;
+}
+
+
+/* spent.html */
+.balance-info {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.balance-info span {
+    color: #FF5733; /* Add a highlight color for balance amount */
+}
+
+
+/* index.html */
+/* General Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* Header Section */
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Balance on the Top Left */
+.balance {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+/* Heading Centered at the Top */
+.h1 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-top: 0;
+    width: 100%;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+}
+
+/* Buttons (Add Spent and Add Credit) on the Top Right */
+.top-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.b1 {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.b1:hover {
+    background-color: #45a049;
+}
+
+/* Transactions button centered in the middle */
+.middle-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 100px); /* Ensures that the button is in the middle */
+}
+
+.transactions-button {
+    padding: 15px 30px;
+    background-color: #FF5733;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
+.transactions-button:hover {
+    background-color: #ff6f47;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .top-buttons {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .h1 {
+        font-size: 2em;
+    }
+}
+
+
+/* button for spent_data */
+.button_spent_data{
+    background-color: blueviolet; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.button_credit_data{
+    background-color: blueviolet; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+/* General body styles */
+/* dashboard.html */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* Header container for balance and back button */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px 0;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+/* Total Balance at the Top Left */
+.balance-section {
+    flex: 0.3;
+}
+
+.balance-section h1 {
+    font-size: 2em;
+    color: #333;
+}
+
+/* Back button at the top right */
+.back-button-container {
+    flex: 1;
+    text-align: right;
+}
+
+.back-button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #45a049;
+}
+
+/* Center section for Total Spent and Total Credit */
+.center-section {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.header3 p {
+    margin: 5px 0;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+/* Bar chart container (centered) */
+.chart-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+/* Flexbox container for Credit and Spent Data */
+.data-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Credit and Spent Data sections */
+.credit-data,
+.spent-data {
+    width: 60%;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-right: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Table Styles */
+table.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+table.data-table thead {
+    background-color: #4CAF50;
+    color: white;
+}
+
+table.data-table th, table.data-table td {
+    padding: 15px;
+    text-align: left;
+    white-space: nowrap; /* Ensure content stays on one line */
+    border-bottom: 1px solid #ddd;
+}
+
+table.data-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table.data-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Message for no data available */
+table.data-table td[colspan] {
+    text-align: center;
+    font-weight: bold;
+    color: #777;
+    padding: 20px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .back-button-container {
+        text-align: left;
+        margin-top: 10px;
+    }
+}

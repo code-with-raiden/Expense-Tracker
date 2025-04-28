@@ -1,0 +1,96 @@
+{% extends 'register_login.html' %}
+{% load static %}
+{% block content %}
+
+<h1 class="h1">Expense Tracker</h1>
+<!-- Header with Total Balance on the left and Back button on the right -->
+<div class="header-container">
+    <div class="balance-section">
+        <h1>Total Balance: ₹{{ balance }}</h1>
+    </div>
+    <div class="back-button-container">
+        <a href="{% url 'index' %}"><button class="back-button">Back</button></a>
+    </div>
+</div>
+
+
+<div class="center-section">
+    <div class="header3">
+        <p>Total Spent: ₹{{ total_spent }}</p>
+        <p>Total Credit: ₹{{ total_credit }}</p>
+    </div>
+</div>
+
+<!-- Hidden elements for JavaScript access -->
+<div style="display: none;">
+    <span id="totalSpent">{{ total_spent }}</span>
+    <span id="totalCredit">{{ total_credit }}</span>
+</div>
+
+
+<!-- <p>Categories: {{ categories_json }}</p>
+<p>Amounts: ₹{{ amounts_json }}</p> -->
+<!-- Add a div to hold the graph -->
+<!-- Canvas for the Chart -->
+<canvas id="spendingChart" width="300" height="200"></canvas>
+<script type="application/json" id="categories-data">{{ categories_json|safe }}</script>
+<script type="application/json" id="amounts-data">{{ amounts_json|safe }}</script>
+
+<!-- Flexbox container for Credit Data and Spent Data, side by side -->
+<div class="data-container">
+    <!-- Credit Data on the left side -->
+    <div class="credit-data">
+        <h2>Credit Data</h2>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Money</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for credit in credit_data %}
+                <tr>
+                    <td>{{ credit.date }}</td>
+                    <td>₹{{ credit.money }}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="2">No credit data available.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Spent Data on the right side -->
+    <div class="spent-data">
+        <h2>Spent Data</h2>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Category</th>
+                    <th>Product Name</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for spent in spent_data %}
+                <tr>
+                    <td>{{ spent.date }}</td>
+                    <td>{{ spent.category.name }}</td>
+                    <td>{{ spent.product_name }}</td>
+                    <td>₹{{ spent.price }}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="4">No spent data available.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock content %}

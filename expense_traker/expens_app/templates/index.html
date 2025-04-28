@@ -1,0 +1,23 @@
+{% extends 'register_login.html' %}
+{% block content %}
+<h1 class="h1">Expense Tracker</h1>
+
+<div class="header">
+    <!-- Total Balance on the top-left -->
+    <div class="balance">Total Balance: ₹{{ balance }}</div>
+
+    <!-- Buttons on the top-right -->
+    <div class="top-buttons">
+        <a href="{% url 'add_spent_data' %}"><button class="b1">Add Spent</button></a>
+        <a href="{% url 'add_credit_data' %}"><button class="b1">Add Credit</button></a>
+    </div>
+</div>
+
+<!-- Transactions button centered in the middle -->
+<div class="middle-center">
+    <form action="{% url 'dashboard' %}" method="get">
+        <button type="submit" class="transactions-button">Transactions</button>
+    </form>
+</div>
+
+{% endblock content %}                                                                                                  

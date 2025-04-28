@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker - Register & Login</title>
+    <link rel="stylesheet" href="{% static 'css/styles1.css' %}" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+</head>
+<body>
+    {% block content %}
+    <h1>Expense Tracker</h1>
+    <div class="container">
+        <!-- Login Form -->
+        <div id="login-form">
+            <h2>Login</h2>
+            <form method="POST">
+                {% csrf_token %}
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required><br><br>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required><br><br>
+
+                <button type="submit" name="login">Login</button>
+            </form>
+        </div>
+
+        <!-- Register Button outside of the form -->
+        <p id = "p">Don't have an account? <a href="#" id="register-btn">Register</a></p>
+
+        <!-- Registration Form outside of the form -->
+        <div id="register-form" class="hidden">
+            <form method="POST">
+                {% csrf_token %}
+                <h2>Register</h2>
+                {{ form.as_p }}
+                <button type="submit" name="register">Register</button>
+            </form>
+        </div>
+
+        <!-- Display Error or Success Messages -->
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    </div>
+
+    <script>
+        // Show/Hide register form
+        document.getElementById("register-btn").addEventListener("click", function() {
+            document.getElementById("login-form").style.display = "none";
+            document.getElementById("register-form").classList.remove("hidden");
+            document.getElementById("p").style.display = "none";
+        });
+    </script>
+
+    {% endblock content %}
+    <script src="{% static 'js/chart_script.js' %}"></script>
+</body>
+</html>

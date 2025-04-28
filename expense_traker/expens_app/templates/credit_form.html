@@ -1,0 +1,16 @@
+{% extends 'register_login.html' %}
+{% block content %}
+<div class="container">
+<h1>Add Credit</h1>
+<form method="post">
+    
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Add Credit" class="button_credit_data">
+</form>
+<br><br>
+<div class="back-button-container">
+    <a href="{% url 'index' %}"><button class="back-button">Back</button></a>
+</div>
+</div>
+{% endblock content %}

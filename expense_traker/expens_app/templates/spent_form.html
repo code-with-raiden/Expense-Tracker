@@ -1,0 +1,33 @@
+{% extends 'register_login.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+<h1>Add Spent</h1>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Add Spent" class="button_spent_data">
+</form>
+<br><br>
+
+<!-- Display current balance -->
+<div class="balance-info">
+    Current Balance: <span>₹{{ balance }}</span>
+</div>
+
+<!-- Display error messages if any -->
+{% if messages %}
+    <div>
+        {% for message in messages %}
+            <div class="alert">{{ message }}</div>
+        {% endfor %}
+    </div>
+{% endif %}
+<div class="back-button-container">
+    <a href="{% url 'index' %}"><button class="back-button">Back</button></a>
+</div>
+</div>
+
+{% endblock content %}
